@@ -1,19 +1,35 @@
-import React from 'react'
+import React, { useRef, useState } from 'react'
+import vid from './videos/6919263540142542085.mp4';
+import './Video.css'
+import VideoFooter from './VideoFooter';
 
 function Video() {
+    const videoRef = useRef(null);
+    const [playing, setPlaying] = useState(false);
+
+
+    const handlePlay = () => {
+        if(playing){
+            videoRef.current.pause();
+            setPlaying(false);
+        }else{
+            videoRef.current.play();
+            setPlaying(true);
+        }
+    }
+
     return (
         <div className="video">
             <video
                 className="video__player"
-                controls
-                autoPlay
+                ref={videoRef}
+                onClick={handlePlay}
                 loop
-                src="https://www.youtube.com/714121fd-2ab7-4789-97d5-165b7b0d285e"
+                src={vid}
             >
-                
             </video>
+            <VideoFooter />
             
-            <h3>My video</h3>
            
 
         </div>

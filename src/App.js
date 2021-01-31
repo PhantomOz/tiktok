@@ -5,9 +5,12 @@ import Video from './Video';
 function App() {
   return (
     <div className="app">
-      <h1>Building TikTok</h1>
-      <Video />
-      <Video />
+      
+      <div className="app__videos">
+        <Video />
+        <Video />
+      </div>
+      
       {/* app container */}
       {/* videos */}
     </div>
