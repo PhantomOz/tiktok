@@ -1,10 +1,9 @@
 import React, { useRef, useState } from 'react'
-import vid from './videos/6919263540142542085.mp4';
 import './Video.css'
 import VideoFooter from './VideoFooter';
 import VideoSidebar from './VideoSidebar';
 
-function Video() {
+function Video({url, channel, song, description, likes, message, share}) {
     const videoRef = useRef(null);
     const [playing, setPlaying] = useState(false);
 
@@ -26,11 +25,19 @@ function Video() {
                 ref={videoRef}
                 onClick={handlePlay}
                 loop
-                src={vid}
+                src={`https://tiktokclome.herokuapp.com${url}`}
             >
             </video>
-            <VideoFooter />
-            <VideoSidebar />
+            <VideoFooter
+                song={song}
+                channel={channel}
+                description={description} 
+            />
+            <VideoSidebar
+                likes={likes}
+                share={share}
+                message={message}
+            />
            
 
         </div>
