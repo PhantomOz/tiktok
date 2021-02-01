@@ -2,6 +2,7 @@ import React, { useRef, useState } from 'react'
 import vid from './videos/6919263540142542085.mp4';
 import './Video.css'
 import VideoFooter from './VideoFooter';
+import VideoSidebar from './VideoSidebar';
 
 function Video() {
     const videoRef = useRef(null);
@@ -29,7 +30,7 @@ function Video() {
             >
             </video>
             <VideoFooter />
-            
+            <VideoSidebar />
            
 
         </div>
